@@ -65,11 +65,11 @@ Then open:
 
 http://127.0.0.1:5000
 
-🚀 Deployment
+## 🚀 Deployment
 
 This project is deployed using Render.
 
-💡 Future Improvements
+## 💡 Future Improvements
 
 Add authentication system
 Integrate payment for tickets
@@ -77,6 +77,6 @@ Add AI-powered chatbot
 Admin dashboard
 
 
-👩‍💻 Author
+## 👩‍💻 Author
 
 Beyza Uzun
