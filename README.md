@@ -6,7 +6,7 @@ A modern full-stack conference website built with Flask and deployed to producti
 👉 https://conference-website-fuy2.onrender.com
 
 ## 🎥 Demo Video
-(Add your video here if you upload it or link it)
+https://www.linkedin.com/posts/beyza-uzun-1520672b5_python-flask-webdevelopment-ugcPost-7456267942528262144-nGLP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEumJg4BDP9c3iLiOmqBOs-X4Iyb0soZjR0
 
 ## 📌 About the Project
 This project is a dynamic conference website that showcases:
