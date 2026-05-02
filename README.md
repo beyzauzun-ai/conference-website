@@ -4,9 +4,7 @@ A modern full-stack conference website built with Flask and deployed to producti
 
 ## 🎥 Demo
 
-<p align="center">
-  <img src="demo.gif" width="600"/>
-</p>
+![App Demo](static/css/demo.gif)
 
 ## 🌐 Live Demo
 👉 https://conference-website-fuy2.onrender.com
