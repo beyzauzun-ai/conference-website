@@ -32,6 +32,7 @@ It demonstrates how to build and deploy a full-stack web application from scratc
 
 ## 📂 Project Structure
 
+```
 conference-website/
 │── app.py
 │── requirements.txt
@@ -43,6 +44,7 @@ conference-website/
 ├── css/
 │ └── style.css
 └── images/
+```
 
 ## ⚙️ Installation (Local Run)
 
