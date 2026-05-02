@@ -5,7 +5,7 @@ A modern full-stack conference website built with Flask and deployed to producti
 ## 🎥 Demo
 
 <p align="center">
-  <img src="demo.gif" width="700">
+  <img src="demo1.gif" width="700">
 </p> 
 
 ## 🌐 Live Demo
