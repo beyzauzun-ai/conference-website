@@ -53,7 +53,8 @@ Clone the repository:
 git clone https://github.com/beyzauzun-ai/conference-website.git
 cd conference-website
 ```
-Install dependencies:
+
+## ⚙️ Install dependencies:
 
 pip install -r requirements.txt
 
