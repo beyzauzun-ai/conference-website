@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - {{ data.date }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">{{ data.name }}</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#pricing">Tickets</a></li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary nav-cta">Get Tickets</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="hero-content">
+            <div class="badge">{{ data.date }} &bull; {{ data.location }}</div>
+            <h1 class="hero-title">{{ data.name }}</h1>
+            <p class="hero-subtitle">{{ data.description }}</p>
+            <div class="hero-actions">
+                <a href="#pricing" class="btn btn-primary btn-large">Secure Your Spot</a>
+                <a href="#schedule" class="btn btn-secondary btn-large">View Schedule</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Speakers Section -->
+    <section class="speakers" id="speakers">
+        <div class="section-header">
+            <h2>Meet the Visionaries</h2>
+            <p>Learn from industry leaders who are shaping the future of technology.</p>
+        </div>
+        <div class="speaker-grid">
+            {% for speaker in data.speakers %}
+            <div class="speaker-card glass-card">
+                <div class="speaker-img-wrapper">
+                    <img src="{{ url_for('static', filename='images/' + speaker.image) }}" alt="{{ speaker.name }}" class="speaker-img" onerror="this.src='https://via.placeholder.com/400x500/2a2a35/ffffff?text={{ speaker.name | replace(' ', '+') }}'">
+                </div>
+                <div class="speaker-info">
+                    <h3 class="speaker-name">{{ speaker.name }}</h3>
+                    <p class="speaker-title">{{ speaker.title }}</p>
+                    <p class="speaker-company">{{ speaker.company }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule" id="schedule">
+        <div class="section-header">
+            <h2>Agenda</h2>
+            <p>One packed day of insights, networking, and innovation.</p>
+        </div>
+        <div class="timeline">
+            {% for item in data.schedule %}
+            <div class="timeline-item {{ item.type }}">
+                <div class="time">{{ item.time }}</div>
+                <div class="timeline-content glass-card">
+                    <h4>{{ item.title }}</h4>
+                    {% if item.speaker %}
+                    <p class="speaker-ref">{{ item.speaker }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2>Choose Your Experience</h2>
+            <p>Secure your pass to the most anticipated tech event of the year.</p>
+        </div>
+        <div class="pricing-grid">
+            {% for tier in data.pricing %}
+            <div class="pricing-card glass-card {% if tier.featured %}featured{% endif %}">
+                {% if tier.featured %}
+                <div class="featured-badge">Most Popular</div>
+                {% endif %}
+                <h3>{{ tier.tier }}</h3>
+                <div class="price">{{ tier.price }}</div>
+                <ul class="features">
+                    {% for feature in tier.features %}
+                    <li><span class="check">&check;</span> {{ feature }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="#" class="btn {% if tier.featured %}btn-primary{% else %}btn-secondary{% endif %}">Get {{ tier.tier }} Pass</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">{{ data.name }}</div>
+                <p>Empowering the next generation of builders.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Code of Conduct</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 {{ data.name }}. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
